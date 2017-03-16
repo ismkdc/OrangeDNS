@@ -1,0 +1,50 @@
+﻿@model OrangeDNS.Data.Domain
+@using OrangeDNS.Data
+@{
+    ViewBag.Title = "Orange DNS";
+}
+<div class="ibox">
+
+    <div class="ibox-content">
+        <div class="row">
+            <h2>@ViewData["ResultMsg"]</h2>
+            <div class="col-lg-6">
+                @using (Html.BeginForm("Add", "Domain", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Url</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(t => t.Url, new { @class = "form-control" })</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tip</label>
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(t => t.Type, new SelectList(Enum.GetValues(typeof(DType))), "Tip Seçin", new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Ip</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(t => t.ForwardIp, new { @class = "form-control" })</div>
+                         </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Kategori</label>
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(t => t.CategoryId, new SelectList((List<OrangeDNS.Data.Category>)ViewData["Categories"], "Id", "Name"), "Kategori Seçin", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <button class="btn btn-primary pull-right" type="submit">Kaydet</button>
+                            </div>
+                            </div>
+
+                            }
+
+                        </div>
+        </div>
+ </div>
+</div>

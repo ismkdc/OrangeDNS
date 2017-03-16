@@ -1,0 +1,95 @@
+﻿@model List<OrangeDNS.Data.GeneralSettings>
+@{
+    ViewBag.Title = "Orange DNS";
+}
+
+<div class="ibox-content">
+    <h2>@ViewData["ResultMsg"]</h2>
+
+
+    <table class="table table-striped table-bordered table-hover dataTables-example">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Anahtar</th>
+                <th>Değer</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="gradeX">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Value</td>
+                    <td> @Html.ActionLink("Düzenle", "Edit", "Setting", new { SettingId = item.Id }, new { })</td>
+
+                </tr>
+            }
+
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Anahtar</th>
+                <th>Değer</th>
+                <th>Düzenle</th>
+            </tr>
+        </tfoot>
+    </table>
+    @section Styles {
+        @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/plugins/jeditable")
+        @Scripts.Render("~/plugins/dataTables")
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $('.dataTables-example').dataTable({
+                    "dom": 'T<"clear">lfrtip',
+                    "tableTools": {
+                        "sSwfPath": "../scripts/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
+                    }
+                });
+
+                /* Init DataTables */
+                var oTable = $('#editable').dataTable();
+
+                /* Apply the jEditable handlers to the table */
+                oTable.$('td').editable('../example_ajax.php', {
+                    "callback": function (sValue, y) {
+                        var aPos = oTable.fnGetPosition(this);
+                        oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                    },
+                    "submitdata": function (value, settings) {
+                        return {
+                            "row_id": this.parentNode.getAttribute('id'),
+                            "column": oTable.fnGetPosition(this)[2]
+                        };
+                    },
+
+                    "width": "90%",
+                    "height": "100%"
+                });
+
+
+            });
+
+            function fnClickAddRow() {
+                $('#editable').dataTable().fnAddData([
+                    "Custom row",
+                    "New row",
+                    "New row",
+                    "New row",
+                    "New row"]);
+
+            }
+
+        </script>
+    }
+</div>

@@ -1,0 +1,72 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="~/Img/profile.jpg" />
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">@Session["name"]</strong>
+                            </span> <span class="text-muted text-xs block">Yönetici <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="@Url.Action("Profile", "AppViews")">Profile</a></li>
+                        <li><a href="@Url.Action("Contacts", "AppViews")">Contacts</a></li>
+                        <li><a href="@Url.Action("Inbox", "Mailbox")">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Login", "Pages")">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-th-large"></i> <span class="nav-label">Anasayfa</span> <span class="fa arrow"></span></a>
+           
+            </li>
+            <li class="@Html.IsSelected(controller: "Domain")">
+                <a href="@Url.Action("Index", "Domain")"><i class="fa fa-th-large"></i> <span class="nav-label">Domainler</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "Add")"><a href="@Url.Action("Add", "Domain")">Ekle</a></li>
+                    <li class="@Html.IsSelected(action: "BulkAdd")"><a href="@Url.Action("BulkAdd", "Domain")">Toplu Ekle</a></li>
+                    <li class="@Html.IsSelected(action: "List")"><a href="@Url.Action("Index", "Domain")">Listele</a></li>
+
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "Category")">
+                <a href="@Url.Action("Index", "Category")"><i class="fa fa-th-large"></i> <span class="nav-label">Kategoriler</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "Add")"><a href="@Url.Action("Add", "Category")">Ekle</a></li>
+                    <li class="@Html.IsSelected(action: "List")"><a href="@Url.Action("Index", "Category")">Listele</a></li>
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "Client")">
+                <a href="@Url.Action("Index", "Client")"><i class="fa fa-th-large"></i> <span class="nav-label">Kullanıcılar</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "Add")"><a href="@Url.Action("Add", "Client")">Ekle</a></li>
+                    <li class="@Html.IsSelected(action: "List")"><a href="@Url.Action("Index", "Client")">Listele</a></li>
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Log")">
+                <a href="@Url.Action("Index", "Log")"><i class="fa fa-th-large"></i> <span class="nav-label">Loglar</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "Log")"><a href="@Url.Action("Index", "Log")">Listele</a></li>
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Setting")">
+                <a href="@Url.Action("Index", "Setting")"><i class="fa fa-th-large"></i> <span class="nav-label">Diğer</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "Setting")"><a href="@Url.Action("Index", "Setting")">Ayarlar</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</nav>

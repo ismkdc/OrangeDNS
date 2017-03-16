@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrangeDNS.Server", "OrangeDNS.Server\OrangeDNS.Server.csproj", "{C6CCE440-E001-4746-8699-2A09EA7A8517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrangeDNS.UI", "OrangeDNS.UI\OrangeDNS.UI.csproj", "{D2D24CAB-DA10-4F53-86FE-23C2A2F194FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrangeDNS.Data", "OrangeDNS.Data\OrangeDNS.Data.csproj", "{014B965E-EE85-470D-BDB9-DD02F228844F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6CCE440-E001-4746-8699-2A09EA7A8517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CCE440-E001-4746-8699-2A09EA7A8517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CCE440-E001-4746-8699-2A09EA7A8517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CCE440-E001-4746-8699-2A09EA7A8517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D24CAB-DA10-4F53-86FE-23C2A2F194FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D24CAB-DA10-4F53-86FE-23C2A2F194FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D24CAB-DA10-4F53-86FE-23C2A2F194FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D24CAB-DA10-4F53-86FE-23C2A2F194FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{014B965E-EE85-470D-BDB9-DD02F228844F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{014B965E-EE85-470D-BDB9-DD02F228844F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{014B965E-EE85-470D-BDB9-DD02F228844F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{014B965E-EE85-470D-BDB9-DD02F228844F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

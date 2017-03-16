@@ -1,0 +1,24 @@
+﻿<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm text-muted welcome-message">OrangeDNS'e Hoşgeldiniz !</span>
+            </li>
+            
+            
+            <li>
+                @using (Html.BeginForm("Logout", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                @Html.AntiForgeryToken()
+
+
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="fa fa-sign-out"></i> Çıkış
+                </a>
+                }
+            </li>
+            
+        </ul>
+    </nav>
+</div>

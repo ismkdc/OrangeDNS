@@ -1,0 +1,30 @@
+﻿@model OrangeDNS.Data.Category
+@{
+    ViewBag.Title = "Orange DNS";
+}
+<div class="ibox">
+
+    <div class="ibox-content">
+        <div class="row">
+            <h2>@ViewData["ResultMsg"]</h2>
+            <div class="col-lg-7">
+                @using (Html.BeginForm("Add", "Category", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Kategori Adı</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(t => t.Name, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-sm-11">
+                        <div class="form-group">
+                            <button class="btn btn-primary pull-right" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
