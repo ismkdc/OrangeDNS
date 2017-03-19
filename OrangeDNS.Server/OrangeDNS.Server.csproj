@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="OrangeDNS.Server.licenseheader" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
