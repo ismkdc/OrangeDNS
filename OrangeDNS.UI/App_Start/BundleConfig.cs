@@ -4,7 +4,8 @@
 // Author Website: www.ismailkundakci.com
 // Author Email: ism.kundakci@hotmail.com
 // Date: 19/03/2017 13:15:00
-// Description: OrangeDNS is a powerfull dns firewall solution written by C#
+// Description: OrangeDNS is a powerfull dns firewall solution written by C# used ARSoft.Tools.Net library
+// ARSoft.Tools.Net Page: arsofttoolsnet.codeplex.com
 #endregion
 using System.Web;
 using System.Web.Optimization;
