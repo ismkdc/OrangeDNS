@@ -1,7 +1,5 @@
 # OrangeDNS
 A powerfull dns firewall with .net
-
-#Features
 Block clients internet access
 Block websites
 Block all clients internet access
